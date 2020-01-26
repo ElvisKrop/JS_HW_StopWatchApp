@@ -1,0 +1,50 @@
+@import './restyle';
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    background-image: url('../images/bckg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    header {
+        margin: 0 auto;
+        text-align: center;
+        height: 20vh;
+        text-shadow: 0 0 5px #ffffff;
+        background: linear-gradient(to bottom, #f0da15, transparent);
+        h1 {
+            padding-top: 20px;
+            font-size: 90px;
+            font-family: 'Zhi Mang Xing', cursive;
+        }
+        p {
+            margin: 20px auto;
+            font-family: 'Raleway', sans-serif;
+            width: 95%;
+            font-size: 20px;
+        }
+    }
+    .wrap {
+        width: 90%;
+        max-width: 1440px;
+        margin: 0 auto;
+
+    }
+    footer {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        height: 10vh;
+        background: linear-gradient(to top, #f0da15, transparent);
+        text-align: right;
+        span {
+            position: relative;
+            top: 50%;
+            right: 2%;
+            font-family: 'Raleway', sans-serif;
+        }
+    }
+}
