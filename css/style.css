@@ -91,6 +91,82 @@ a {
   width: 90%;
   max-width: 1440px;
   margin: 0 auto;
+  border: 3px solid #f0da15;
+  border-radius: 20px;
+  height: 70vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 300px;
+      grid-template-columns: auto 300px;
+}
+
+.container .wrap .clocks {
+  font-family: 'Changa', sans-serif;
+  text-shadow: 0 0 5px #ffffff;
+  font-size: 80px;
+  text-align: right;
+}
+
+.container .wrap .clocks .simple-time {
+  padding: 15px;
+  margin: 10vh auto;
+  background-color: #f0da15b3;
+}
+
+.container .wrap .clocks .each-split {
+  font-size: 0.8em;
+  padding: 15px;
+  margin: 7vh auto;
+  background-color: #f0da15b3;
+}
+
+.container .wrap .clocks .btns-block {
+  text-align: center;
+}
+
+.container .wrap .clocks .btns-block button {
+  font-size: 0.5em;
+  border-radius: 50%;
+  padding: 20px;
+  width: 180px;
+  background-color: rgba(240, 218, 21, 0.7);
+  border: 3px solid #f0da15;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.container .wrap .clocks .btns-block button.display-none-class {
+  display: none;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.container .wrap .splits {
+  border-left: 3px solid #f0da15;
+}
+
+.container .wrap .splits h3 {
+  padding: 10px;
+  font-size: 50px;
+  font-family: 'Zhi Mang Xing', cursive;
+  text-align: center;
+  border-bottom: 3px solid #f0da15;
+}
+
+.container .wrap .splits .splits-table {
+  font-weight: 600;
+  font-family: 'Changa', sans-serif;
+  font-size: 30px;
+  text-align: center;
+}
+
+.container .wrap .splits .splits-table div {
+  margin-top: 10px;
+}
+
+.container .wrap .splits .splits-table span {
+  font-weight: 400;
 }
 
 .container footer {

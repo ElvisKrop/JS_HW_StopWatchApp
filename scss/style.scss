@@ -31,7 +31,68 @@
         width: 90%;
         max-width: 1440px;
         margin: 0 auto;
-
+        border: 3px solid #f0da15;
+        border-radius: 20px;
+        height: 70vh;
+        display: grid;
+        grid-template-columns: auto 300px;
+        .clocks {
+            font-family: 'Changa', sans-serif;
+            text-shadow: 0 0 5px #ffffff;
+            font-size: 80px;
+            text-align: right;
+            .simple-time {
+                padding: 15px;
+                margin: 10vh auto;
+                background-color: #f0da15b3;
+            }
+            .each-split {
+                font-size: 0.8em;
+                padding: 15px;
+                margin: 7vh auto;
+                background-color: #f0da15b3;
+            }
+            .btns-block {
+                text-align: center;
+                button {
+                    font-size: 0.5em;
+                    border-radius: 50%;
+                    padding: 20px;
+                    width: 180px;
+                    background-color: rgba(240, 218, 21, 0.7);
+                    border: 3px solid #f0da15;
+                    transition-duration: 0.3s;
+                    cursor: pointer;
+                    &.display-none-class {
+                        display: none;
+                        transition-duration: 0.3s;
+                    }
+                }
+            }
+        }
+        .splits {
+            border-left: 3px solid #f0da15;
+            h3 {
+                padding: 10px;
+                font-size: 50px;
+                font-family: 'Zhi Mang Xing', cursive;
+                text-align: center;
+                border-bottom: 3px solid #f0da15;
+            }
+            .splits-table {
+                font-weight: 600;
+                font-family: 'Changa', sans-serif;
+                font-size: 30px;
+                text-align: center;
+                div {
+                    margin-top: 10px;
+                }
+                span {
+                    font-weight: 400;
+                }
+            }
+        }
+        
     }
     footer {
         width: 100%;
