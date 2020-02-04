@@ -60,6 +60,9 @@ startPauseBtn.addEventListener('click', function(e) {
 });
 
 resetBtn.addEventListener('click', function() {
+    for (let i = 1; i < tableOfSplits.childNodes.length; i++){
+        tableOfSplits.children[0].remove();
+    }
 // при нажатии чистим tableOfSplits от дочерних и обнуляем счетчики
 });
 
