@@ -1,10 +1,69 @@
 let simpleRunTime = document.querySelector('.simple-time'),
     eachRunSplit = document.querySelector('.each-split'),
-    startPauseBtn = document.getElementById('start-pause-btn'),
+    tableOfSplits = document.querySelector('.splits-table'),
+    startPauseBtn = document.getElementById('toggle-btn'),
     splitBtn = document.getElementById('split-btn'),
-    resetBtn = document.getElementById('reset-btn');
+    resetBtn = document.getElementById('reset-btn'),
+    millis = 0,
+    sec = 0,
+    minutes = 0,
+    memory = '',
+    globalId;
 
 
+
+function timerOutStart (){
+    millis++;
+    if(millis >= 100) {
+        sec++;
+        millis -= 100;
+    }
+
+    if(sec >= 60) {
+        minutes++;
+        sec -= 60;
+    }
+
+    if(millis < 10) {
+        millis = '0' + millis;
+    } else millis += '';
+    
+    if(sec.toString().length <= 1) sec = '0' + sec;
+    else sec += '';   
+    
+    if(minutes.toString().length <= 1) minutes = '0' + minutes;
+    else minutes += '';
+    eachRunSplit.innerHTML = `${minutes}:${sec}:${millis}`;
+    simpleRunTime.innerHTML = `${minutes}:${sec}:${millis}`;
+    globalId = setTimeout(timerOutStart, 9);
+
+}
+
+startPauseBtn.addEventListener('click', function(e) {
+    
+    if(e.target.classList.contains('start')) {
+        e.target.classList.remove('start');
+        e.target.classList.add('pause');
+        splitBtn.classList.remove('display-none-class');
+        e.target.innerHTML = 'Pause';
+
+        timerOutStart();
+
+    } else {
+        clearTimeout(globalId);
+
+        e.target.classList.remove('pause');
+        e.target.classList.add('start');
+        e.target.innerHTML = 'Start';
+        resetBtn.classList.remove('display-none-class');
+    }
+});
+
+resetBtn.addEventListener('click', function() {
+// при нажатии чистим tableOfSplits от дочерних и обнуляем счетчики
+});
+
+// функция конструктор для отображения кругов в колонке справа
 function SplitViewer(date, index) {
     let eachSplit = document.createElement('div'),
         splitsTable = document.querySelector('.splits-table'),
@@ -20,26 +79,3 @@ function SplitViewer(date, index) {
     
     splitsTable.appendChild(eachSplit);
 }
-
-let dut = new SplitViewer('00:02:54:00', 0);
-let dfg = new SplitViewer('00:07:54:00', 5);
-let dafg = new SplitViewer('00:07:54:00', 9);
-let daefg = new SplitViewer('00:07:54:00', 10);
-
-startPauseBtn.addEventListener('click', function(e) {
-    splitBtn.classList.remove('display-none-class');
-    resetBtn.classList.remove('display-none-class');
-    e.target.innerHTML = 'Pause';
-    let startDate = new Date();
-    setInterval(function() {
-        let currentDate = new Date(),
-            resultTime = currentDate - startDate;
-            simpleRunTime.innerHTML = `${(resultTime%3600000-resultTime%60000)/60000}:${(resultTime%60000-resultTime%1000)/1000}:${resultTime%1000}`;
-            eachRunSplit.innerHTML = simpleRunTime.innerHTML;
-            e.target.addEventListener('click', function() {
-        
-            });
-    }, 1);
-
-
-});
