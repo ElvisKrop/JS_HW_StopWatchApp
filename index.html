@@ -1,47 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Changa&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway|Zhi+Mang+Xing&display=swap" rel="stylesheet">
-    <title>StopWatch</title>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>StopWatch</h1>
-            <p>Stopwatch &#8212 a special watch with buttons that start, stop, and then zero the hands, used to time races.</p>
-        </header>
-        <div class="wrap">
-            <div class="clocks">
-                <div class="simple-time">
-                    00:00:00
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Raleway|Zhi+Mang+Xing&display=swap"
+            rel="stylesheet"
+        />
+        <title>StopWatch</title>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>StopWatch</h1>
+                <p>
+                    Stopwatch &#8212; a special watch with buttons that start,
+                    stop, and then zero the hands, used to time races.
+                </p>
+            </header>
+            <div class="wrap">
+                <div class="clocks">
+                    <div class="simple-time">
+                        00:00:00
+                    </div>
+                    <div class="each-split">
+                        00:00:00
+                    </div>
+                    <div class="btns-block">
+                        <button id="toggle-btn" class="start">Start</button>
+                        <button id="split-btn">Split</button>
+                        <button id="reset-btn">Reset</button>
+                    </div>
                 </div>
-                <div class="each-split">
-                    00:00:00
-                </div>
-                <div class="btns-block">
-                    <button id="toggle-btn" class="start">Start</button>
-                    <button id="split-btn">Split</button>
-                    <button id="reset-btn">Reset</button>
+                <div class="splits">
+                    <h3>Splits</h3>
+                    <div class="splits-table"></div>
                 </div>
             </div>
-            <div class="splits">
-                <h3>Splits</h3>
-                <div class="splits-table"></div>
-            </div>
+
+            <footer>
+                <span>Made by Nikita Zasimuk.</span>
+            </footer>
         </div>
 
-        <footer>
-            <span>Made by Nikita Zasimuk.</span>
-        </footer>
-    </div>
-
-    <script src="./js/script.js"></script>
-</body>
+        <script src="./js/script.js"></script>
+    </body>
 </html>
 
 <!-- 

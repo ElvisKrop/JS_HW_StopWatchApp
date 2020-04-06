@@ -1,111 +1,70 @@
-@import './restyle';
+@import "./restyle";
 
 .container {
-    width: 100%;
-    margin: 0 auto;
-    height: 100vh;
-    background-image: url('../images/bckg.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: linear-gradient(to bottom, #f0da15, transparent);
+    font-family: "Raleway", sans-serif;
 
     header {
-        margin: 0 auto;
         text-align: center;
-        height: 20vh;
-        text-shadow: 0 0 5px #ffffff;
-        background: linear-gradient(to bottom, #f0da15, transparent);
+        padding: 30px 0;
         h1 {
-            padding-top: 20px;
-            font-size: 90px;
-            font-family: 'Zhi Mang Xing', cursive;
-        }
-        p {
-            margin: 20px auto;
-            font-family: 'Raleway', sans-serif;
-            width: 95%;
-            font-size: 20px;
+            font-size: 80px;
+            font-family: "Zhi Mang Xing", cursive;
         }
     }
     .wrap {
         width: 90%;
-        max-width: 1440px;
         margin: 0 auto;
-        border: 3px solid #f0da15;
-        border-radius: 20px;
-        height: 70vh;
         display: grid;
         grid-template-columns: auto 300px;
+        text-align: center;
+        font-family: "Courier New", Courier, monospace;
         .clocks {
-            font-family: 'Courier New', Courier, monospace;
-            text-shadow: 0 0 5px #ffffff;
             font-size: 80px;
-            text-align: right;
-            .simple-time {
-                padding: 15px;
-                margin: 10vh auto;
-                background-color: #f0da15b3;
-            }
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
             .each-split {
                 font-size: 0.8em;
-                padding: 15px;
-                margin: 7vh auto;
-                background-color: #f0da15b3;
             }
-            .btns-block {
-                text-align: center;
-                button {
-                    font-size: 0.5em;
-                    border-radius: 50%;
-                    padding: 20px;
-                    width: 180px;
-                    background-color: rgba(240, 218, 21, 0.7);
-                    border: 3px solid #f0da15;
+            .btns-block button {
+                font-size: 0.5em;
+                border-radius: 50%;
+                padding: 20px;
+                width: 180px;
+                border: 1px solid #f0da15;
+                transition-duration: 0.3s;
+                cursor: pointer;
+                &.display-none-class {
+                    display: none;
                     transition-duration: 0.3s;
-                    cursor: pointer;
-                    &.display-none-class {
-                        display: none;
-                        transition-duration: 0.3s;
-                    }
                 }
             }
         }
         .splits {
-            border-left: 3px solid #f0da15;
+            border-left: 1px solid #f0da15;
+            text-align: center;
+            font-size: 30px;
             h3 {
                 padding: 10px;
                 font-size: 50px;
-                font-family: 'Zhi Mang Xing', cursive;
-                text-align: center;
-                border-bottom: 3px solid #f0da15;
+                font-family: "Zhi Mang Xing", cursive;
             }
-            .splits-table {
-                font-weight: 600;
-                font-family: 'Changa', sans-serif;
-                font-size: 30px;
-                text-align: center;
-                div {
-                    margin-top: 10px;
-                }
-                span {
-                    font-weight: 400;
-                }
+            .splits-table div {
+                margin-top: 10px;
             }
         }
-        
     }
     footer {
         width: 100%;
-        position: absolute;
+        position: fixed;
         bottom: 0;
         height: 10vh;
-        background: linear-gradient(to top, #f0da15, transparent);
-        text-align: right;
         span {
-            position: relative;
+            position: absolute;
             top: 50%;
             right: 2%;
-            font-family: 'Raleway', sans-serif;
         }
     }
 }
