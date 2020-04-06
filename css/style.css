@@ -112,12 +112,6 @@ a {
   cursor: pointer;
 }
 
-.container .wrap .clocks .btns-block button.display-none-class {
-  display: none;
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
-}
-
 .container .wrap .splits {
   border-left: 1px solid #f0da15;
   text-align: center;

@@ -1,4 +1,4 @@
-let simpleRunTime = document.querySelector(".simple-time"),
+const simpleRunTime = document.querySelector(".simple-time"),
     eachRunSplit = document.querySelector(".each-split"),
     tableOfSplits = document.getElementsByClassName("splits-table")[0],
     startPauseBtn = document.getElementById("toggle-btn"),
@@ -13,8 +13,8 @@ let simpleRunTime = document.querySelector(".simple-time"),
         millis: 0,
         sec: 0,
         minutes: 0,
-    },
-    globalId,
+    };
+let globalId,
     splitId,
     counter = 0;
 
@@ -29,15 +29,10 @@ function resetTimeVar() {
     startPauseBtn.classList.remove("pause");
     startPauseBtn.classList.add("start");
     startPauseBtn.innerHTML = "Start";
-    resetBtn.classList.add("display-none-class");
-    splitBtn.classList.add("display-none-class");
+    resetBtn.style.display = "none";
+    splitBtn.style.display = "none";
 
-    let clildElements = tableOfSplits.getElementsByClassName("each-split");
-    do {
-        for (let key of clildElements) {
-            tableOfSplits.removeChild(key);
-        }
-    } while (clildElements.length != 0);
+    tableOfSplits.innerHTML = "";
     clearTimeout(globalId);
     clearTimeout(splitId);
     eachRunSplit.innerHTML = "00:00:00";
@@ -103,7 +98,7 @@ startPauseBtn.addEventListener("click", ({ target }) => {
     if (target.classList.contains("start")) {
         target.classList.remove("start");
         target.classList.add("pause");
-        splitBtn.classList.remove("display-none-class");
+        splitBtn.style.display = "inline-block";
         target.innerHTML = "Pause";
 
         timerClobalStart();
@@ -115,11 +110,11 @@ startPauseBtn.addEventListener("click", ({ target }) => {
         target.classList.remove("pause");
         target.classList.add("start");
         target.innerHTML = "Start";
-        resetBtn.classList.remove("display-none-class");
+        resetBtn.style.display = "inline-block";
     }
 });
 
-splitBtn.addEventListener("click", function (e) {
+splitBtn.addEventListener("click", function () {
     SplitViewer(eachRunSplit.innerHTML, counter++);
     for (const key in splitTime) {
         splitTime[key] = 0;
@@ -131,17 +126,19 @@ resetBtn.addEventListener("click", resetTimeVar);
 
 // функция конструктор для отображения кругов в колонке справа
 function SplitViewer(date, index) {
-    let eachSplit = document.createElement("div"),
-        splitsTable = document.querySelector(".splits-table"),
-        spanTime = document.createElement("span");
+    if (index < 13) {
+        let eachSplit = document.createElement("div"),
+            splitsTable = document.querySelector(".splits-table"),
+            spanTime = document.createElement("span");
 
-    eachSplit.classList.add("each-split");
+        eachSplit.classList.add("each-split");
 
-    if (index < 10) {
-        eachSplit.innerHTML = `#${index + 1} `;
-        spanTime.innerHTML = date;
-        eachSplit.appendChild(spanTime);
-    } else eachSplit.innerHTML = `Please stop!`;
+        if (index < 10) {
+            eachSplit.innerHTML = `#${index + 1} `;
+            spanTime.innerHTML = date;
+            eachSplit.appendChild(spanTime);
+        } else eachSplit.innerHTML = `Please stop!`;
 
-    splitsTable.appendChild(eachSplit);
+        splitsTable.appendChild(eachSplit);
+    } else throw new Error("A-ta-ta!");
 }
